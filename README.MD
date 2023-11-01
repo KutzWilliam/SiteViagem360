@@ -22,7 +22,12 @@ Viagens360 é um sistema web desenvolvido em PHP para compra de passagens aérea
 ## Configuração e Instalação
 
 1. Clone o repositório
-2. Importe o esquema do banco de dados fornecido no diretório `model/scripts`.
+2. Crie o arquivo .htacess
+codigo: RewriteEngine on
+        RewriteCond %{SCRIPT_FILENAME} !-f
+        RewriteCond %{SCRIPT_FILENAME} !-d
+        RewriteRule ^(.*)$ index.php?url=$1
+3. Importe o esquema do banco de dados fornecido no diretório `model/scripts`.
 4. Implante a aplicação em um servidor web com suporte a PHP (por exemplo, Apache, Nginx).
 5. Acesse a aplicação em seu navegador da web: `http://localhost/viagens360/home`
 
